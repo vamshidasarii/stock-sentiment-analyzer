@@ -1,0 +1,143 @@
+/* Page Base */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+
+
+#main-navbar {
+  background-color: #00e676;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+/* ..................... */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-link.active {
+  color: black;
+  background-color:#ccffdb;  
+  border-bottom: none; 
+  font-weight: 600;       
+}
+
+
+
+
+
+#navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: black;
+  background-color:#ccffdb;
+  font-weight: 600;
+}
+
+
+
+/*  Premium Container */
+.premium-container {
+  max-width: 850px;
+  margin: 60px auto 60px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.06);
+}
+
+.premium-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #111;
+  text-align: center;
+}
+
+.premium-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/*  Feature List */
+.premium-features {
+  margin-top: 30px;
+}
+
+.premium-features h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.premium-features ul {
+  list-style-type: "✅ ";
+  padding-left: 25px;
+}
+
+.premium-features ul li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+/*  Pricing & Subscribe */
+.pricing-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.subscribe-button {
+  background-color: #00e676;
+  color: black;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.subscribe-button:hover {
+  background-color: #00c665;
+  transform: scale(1.05);
+}
+
+  

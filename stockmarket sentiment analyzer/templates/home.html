@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HOME PAGE</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Typed.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Optional External CSS -->
+  <!-- <link rel="stylesheet" href="/static/style.css" /> -->
+
+  <style>
+    /* Reset and font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+    }
+
+    /* Navbar ---------------------------------------------------------------------------------------------*/
+    #main-navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background:#00e676;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; 
+  backdrop-filter: blur(4px); 
+}
+/* --------------------------------------------------------------------------------------------------------------------- */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  
+  .nav-link:hover {
+    color: black;
+  }
+  
+  .nav-link.active {
+    color: black;
+    background-color:#ccffdb; 
+    border-bottom: none; 
+    font-weight: 600;      
+  }
+
+
+    #navbar-brand {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    #navbar-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color:#ccffdb;
+      font-weight: 600;
+    }
+
+    /* Hero Section ----------------------------------------------------------------------------------------------------*/
+    .hero {
+      background-image: url('/static/images/stock-trading-6525083.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      position: relative;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.75);
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      max-width: 850px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span#typed-text {
+      color: #00e676;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: #00e676;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: scale(1.03);
+    }
+
+
+    /* desclimer css------------------------------------------------------------------------------------ */
+    .disclaimer-bar {
+  /* background-color: #fff8e1; */
+  color: #efeaea;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  margin-top: 60px; 
+  position: relative;
+  z-index: 50;
+}
+/* ---------------------------------------------------------------------------------------------- */
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="main-navbar">
+    <div id="navbar-brand"> Stock Analyzer</div>
+    <div id="navbar-links">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/analyze" class="nav-link ">Analyze</a>
+      <a href="/premium" class="nav-link">Premium</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+  <!-- disclimer ------------------------------------------------------------------------->
+  <div class="disclaimer-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="4">
+      ⚠️ Disclaimer: This project is intended solely for educational and demonstration purposes. The sentiment analysis results are based on publicly available news data and do not constitute financial advice, investment guidance, or recommendations. Always perform your own research or consult a financial advisor before making any trading or investment decisions. The developer assumes no responsibility for any financial losses or actions taken based on the insights provided by this tool.
+    </marquee>
+  </div>
+  
+  <!-----------------------------------------------------------------------------------------------  -->
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1> Market Sentiment <span id="typed-text"></span></h1>
+      <p>“Markets are moved by the stories people believe in.” — Daniel Kahneman</p>
+      <p>This tool analyzes real-time news articles to detect public sentiment toward stocks using natural language processing and sentiment analysis. It's fast, simple, and insightful for anyone curious about the mood behind the markets.</p>
+      <div class="btn-group">
+        <a href="/about" class="btn btn-secondary">ℹ️ Know More</a>
+        <a href="/analyze" class="btn btn-primary"> Try Now</a>
+      </div>
+    </div>
+  </div>
+  <!-- fooooooooooooterrr -------------------------------------------------------------->
+  <footer>
+    <footer style="
+    background-color: #f1f1f1;
+    padding: 30px 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+">
+  <div style="max-width: 1000px; margin: auto; text-align: center;">
+    <h3 style="margin-bottom: 10px;">Stock Market Sentiment Analyzer</h3>
+
+    <p style="max-width: 800px; margin: auto;">
+      This project is a real-time web-based application designed to analyze and visualize the sentiment of recent news headlines related to a company or stock. It uses natural language processing (NLP) to determine whether news articles are expressing positive, negative, or neutral sentiment. 
+      The goal is to help users — especially traders, investors, and analysts — make smarter decisions based on media trends and market emotion.
+    </p>
+
+    <p style="margin-top: 20px; font-weight: bold;">⚙️ Technologies Used:</p>
+    <p>
+      Flask • Python • NLTK VADER • NewsAPI • HTML • CSS • JavaScript
+    </p>
+
+    <p style="margin-top: 20px;">
+      🔗 Data Source: <a href="https://newsapi.org/" target="_blank">NewsAPI.org</a> |
+      Sentiment Analysis: <a href="https://www.nltk.org/" target="_blank">NLTK VADER</a>
+    </p>
+
+    
+
+    <p style="margin-top: 20px; color: #666;">
+      © 2025 All rights reserved | This is an academic/project demonstration and not intended for financial advice or trading decisions.
+    </p>
+  </div>
+</footer>
+
+  <!-- ----------------------------------------------------------------------------------------------- -->
+  
+
+  <!-- Typed.js Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var typed = new Typed('#typed-text', {
+        strings: ["Analyzer", "Tracker", "Predictor", "Engine", "Monitor", "Insight Tool"],
+        typeSpeed: 80,
+        backSpeed: 50,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+

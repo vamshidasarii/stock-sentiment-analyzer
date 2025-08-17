@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Market Sentiment Analyzer</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+ 
+  <!--  Navbar -->
+  <nav id="main-navbar">
+    <div id="navbar-brand">Stock Analyzer</div>
+    <div id="navbar-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/analyze" class="nav-link active">Analyze</a>
+      <a href="/premium" class="nav-link">Premium</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+  
+
+   <!-- disclimer ------------------------------------------------------------------------->
+   <div class="disclaimer-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="4">
+      ⚠️ Disclaimer: This project is intended solely for educational and demonstration purposes. The sentiment analysis results are based on publicly available news data and do not constitute financial advice, investment guidance, or recommendations. Always perform your own research or consult a financial advisor before making any trading or investment decisions. The developer assumes no responsibility for any financial losses or actions taken based on the insights provided by this tool.
+    </marquee>
+  </div>
+  
+  <!-----------------------------------------------------------------------------------------------  -->
+
+  
+  <div class="container">
+    <h1> Stock Market Sentiment Analyzer</h1>
+
+    <div class="form-section">
+      <input type="text" id="companyInput" placeholder="🔍 Enter company name (e.g., Tesla)" />
+      <select id="dateRange">
+        <option value="1">Last 24 Hours</option>
+        <option value="7">Last 7 Days</option>
+      </select>
+      <button id="analyzeBtn" onclick="analyzeSentiment()"> Analyze</button>
+
+    </div>
+
+    <div id="results" class="results-section">
+      <!-- Results will be shown here -->
+    </div>
+  </div>
+
+  <footer>
+    <footer style="
+    background-color: #f1f1f1;
+    padding: 30px 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+">
+  <div style="max-width: 1000px; margin: auto; text-align: center;">
+    <h3 style="margin-bottom: 10px;">Stock Market Sentiment Analyzer</h3>
+
+    <p style="max-width: 800px; margin: auto;">
+      This project is a real-time web-based application designed to analyze and visualize the sentiment of recent news headlines related to a company or stock. It uses natural language processing (NLP) to determine whether news articles are expressing positive, negative, or neutral sentiment. 
+      The goal is to help users — especially traders, investors, and analysts — make smarter decisions based on media trends and market emotion.
+    </p>
+
+    <p style="margin-top: 20px; font-weight: bold;">⚙️ Technologies Used:</p>
+    <p>
+      Flask • Python • NLTK VADER • NewsAPI • HTML • CSS • JavaScript
+    </p>
+
+    <p style="margin-top: 20px;">
+      🔗 Data Source: <a href="https://newsapi.org/" target="_blank">NewsAPI.org</a> |
+      Sentiment Analysis: <a href="https://www.nltk.org/" target="_blank">NLTK VADER</a>
+    </p>
+
+    
+
+    <p style="margin-top: 20px; color: #666;">
+      © 2025 All rights reserved | This is an academic/project demonstration and not intended for financial advice or trading decisions.
+    </p>
+  </div>
+</footer>
+
+  </footer>
+
+  <script>
+    function analyzeSentiment() {
+      //  Analyze button 
+      const button = document.getElementById("analyzeBtn");
+  
+      const company = document.getElementById("companyInput").value;
+      const days = document.getElementById("dateRange").value;
+  
+      if (!company) {
+        alert("Please enter a company name.");
+        return;
+      }
+  
+      // ////////////loading spinner and disable button/////////////////
+      
+      button.disabled = true;
+      button.innerHTML = `<span class="spinner"></span> Analyzing...`;
+  
+      fetch(`/analyze/result?company=${company}&days=${days}`)
+
+        .then(response => response.json())
+        .then(data => {
+          const resultsDiv = document.getElementById("results");
+          resultsDiv.innerHTML = "";
+  
+          if (data.length === 0) {
+            resultsDiv.innerHTML = "<p>No news articles found.</p>";
+            return;
+          }
+  
+          data.forEach(item => {
+            resultsDiv.innerHTML += `
+              <div class="result-card ${item.sentiment.toLowerCase()}">
+                <h3>${item.headline}</h3>
+                <p><strong>Sentiment:</strong> ${item.sentiment}</p>
+                <p><strong>Score:</strong> ${item.score}</p>
+                <a href="${item.link}" target="_blank">🔗 Read more</a>
+              </div>
+            `;
+          });
+        })
+        .catch(error => {
+          document.getElementById("results").innerHTML = "<p>Error fetching results. Please try again.</p>";
+        })
+        .finally(() => {
+          // Reset button back to normal after loading
+          button.disabled = false;
+          button.innerHTML = "Analyze";
+        });
+    }
+  </script>
+  
+</body>
+</html>

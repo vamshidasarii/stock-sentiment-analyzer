@@ -1,0 +1,114 @@
+/*  space below fixed navbar */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 0; 
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+#main-navbar {
+  background-color: #00e676;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 🌟 Shadow here */
+}
+/* ..................... */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-link.active {
+  color: black;
+  background-color:#ccffdb;  
+  border-bottom: none; 
+  font-weight: 600;       
+}
+
+
+
+
+
+#navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: black;
+  background-color:#ccffdb;
+  font-weight: 600;
+
+
+
+}
+
+
+
+/* -------------------------- */
+
+/* About container */
+.about-container,
+.about-me {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-container h1,
+.about-me h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #00e676;
+  padding-bottom: 8px;
+}
+
+.about-container p,
+.about-me p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+/* Link style */
+.about-me a {
+  color: #00b36b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.about-me a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Stock Sentiment Analyzer</title>
+  <link rel="stylesheet" href="/static/about.css" />
+</head>
+<body>
+
+  <nav id="main-navbar">
+    <div id="navbar-brand">Stock Analyzer</div>
+    <div id="navbar-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/analyze" class="nav-link ">Analyze</a>
+      <a href="/premium" class="nav-link">Premium</a>
+      <a href="/about" class="nav-link active">About</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ---About Section--------------------- -->
+  <section class="about-container">
+    <h1>About This Project</h1>
+    <p>
+      The Stock Market Sentiment Analyzer is a real-time web application built to help users understand the market sentiment surrounding various companies. Using advanced Natural Language Processing (NLP) tools, this platform analyzes live news headlines and classifies them into positive, neutral, or negative sentiments. This enables traders, investors, and market enthusiasts to make better decisions based on current media narratives.
+    </p>
+    <p>
+      The heart of this system lies in its use of the VADER Sentiment Analysis model from the NLTK library. News is fetched using the NewsAPI service, processed in the backend with Python and Flask, and displayed to the user through a clean and user-friendly interface using HTML, CSS, and JavaScript.
+    </p>
+    <p>
+      Whether you're a beginner or an expert in stock trading, this tool aims to simplify market insights and make sentiment data accessible to everyone. Built with the goal of demonstrating the power of real-time data processing and sentiment tracking, this project is a perfect example of how technology meets finance.
+    </p>
+  </section>
+
+  <!--  About Me Section -->
+  <section class="about-me">
+    <h2>About the Creator</h2>
+    
+    <p>
+      I love exploring innovative applications of code, especially in areas that intersect with real-world use cases like finance, education, and automation. I also run a tech-focused YouTube channel called <strong>Script Kidde</strong>, where I share programming insights and project tutorials aimed at helping beginners in tech.
+    </p>
+    <p>
+      You can connect with me on <a href="https://www.linkedin.com/in/dasari-vamshi-573b48292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> to explore more about my work, interests, and journey.
+    </p>
+  </section>
+
+  <footer>
+    <footer style="
+    background-color: #f1f1f1;
+    padding: 30px 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+">
+  <div style="max-width: 1000px; margin: auto; text-align: center;">
+    <h3 style="margin-bottom: 10px;"> Stock Market Sentiment Analyzer</h3>
+
+    <p style="max-width: 800px; margin: auto;">
+      This project is a real-time web-based application designed to analyze and visualize the sentiment of recent news headlines related to a company or stock. It uses natural language processing (NLP) to determine whether news articles are expressing positive, negative, or neutral sentiment. 
+      The goal is to help users — especially traders, investors, and analysts — make smarter decisions based on media trends and market emotion.
+    </p>
+
+    <p style="margin-top: 20px; font-weight: bold;">⚙️ Technologies Used:</p>
+    <p>
+      Flask • Python • NLTK VADER • NewsAPI • HTML • CSS • JavaScript
+    </p>
+
+    <p style="margin-top: 20px;">
+      🔗 Data Source: <a href="https://newsapi.org/" target="_blank">NewsAPI.org</a> |
+      Sentiment Analysis: <a href="https://www.nltk.org/" target="_blank">NLTK VADER</a>
+    </p>
+
+    
+
+    <p style="margin-top: 20px; color: #666;">
+      © 2025 All rights reserved | This is an academic/project demonstration and not intended for financial advice or trading decisions.
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>
